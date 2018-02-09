@@ -7,7 +7,8 @@ require 'coinbase/wallet'
 API_KEY    = Figaro.env['coinbase_api_key']
 API_secret = ENV['coinbase_api_secret']
 p API_secret, API_KEY
-client = Coinbase::Wallet::Client.new(api_key: API_KEY,
+
+client = Coinbase::Wallet::Client.new(api_key:    API_KEY,
                                       api_secret: API_secret,
                                       CB_VERSION: 'YYYY-MM-DD')
 
@@ -19,10 +20,9 @@ payment_methods = client.payment_methods
 puts account.transactions.to_json
 
 
-client = Coinbase::Wallet::Client.new(api_key:    API_KEY,
-                                      api_secret: API_secret)
-btc = Currency.new(symbol: :BTC,
-                   client: 'foo') 
+#client = Coinbase::Wallet::Client.new(api_key:    API_KEY,
+#                                      api_secret: API_secret)
+btc = Currency.new(symbol: :BTC)
 
 ## Show me how much money I've spent on a currency and, if I exchanged now how much money I would make.
 # You've spent:
