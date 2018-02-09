@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coinbase (4.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  coinbase
+
+BUNDLED WITH
+   1.16.0
