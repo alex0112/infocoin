@@ -11,3 +11,6 @@ gem 'coinbase'
 
 # Added at 2018-02-08 19:44:10 -0700 by alex:
 gem "rspec", "~> 3.7"
+
+# Added at 2018-02-08 19:53:55 -0700 by alex:
+gem "figaro", "~> 1.1"

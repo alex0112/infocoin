@@ -3,6 +3,8 @@ GEM
   specs:
     coinbase (4.1.0)
     diff-lcs (1.3)
+    figaro (1.1.1)
+      thor (~> 0.14)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -16,12 +18,14 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
+    thor (0.20.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   coinbase
+  figaro (~> 1.1)
   rspec (~> 3.7)
 
 BUNDLED WITH
