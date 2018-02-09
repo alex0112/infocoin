@@ -2,10 +2,13 @@ require 'rspec'
 require_relative '../lib/currency.rb'
 
 describe Currency do
-  describe '#crypto_amount' do
+  describe '.initialize' do
   end
 
-  describe '#usd_invested' do
+  describe '.crypto_amount_in_wallet' do
+  end
+
+  describe '.usd_invested' do
   end
 
   describe '#usd_lost' do
@@ -14,10 +17,10 @@ describe Currency do
   describe '#usd_gained' do
   end
 
-  describe '#usd_current_price' do
+  describe '#crypto_current_price_usd' do
   end
 
-  describe '#my_account_usd_price' do
+  describe '#my_account_amount_usd' do
   end
   
   describe '#positive_roi?' do
