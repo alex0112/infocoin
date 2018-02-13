@@ -1,4 +1,0 @@
-Figaro.require_keys("coinbase_api_key", "coinbase_api_secret")
-# Add configuration values here, as shown below.
-#   example_key: <your_api_key>
-
