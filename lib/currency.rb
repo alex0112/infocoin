@@ -5,7 +5,7 @@ require 'figaro'
 class Currency
   def initialize(symbol)
     raise ArgumentError 'Must specify currency symbol (BTC BCH LTC ETH)' if nil? symbol || !([:BTC, :LTC, :BCH, :LTC].include?(symbol))
-    attr_reader: :symbol
+#    attr_reader: :symbol
 
     # @symbol                   = symbol
     # @api_client               = Coinbase::Wallet::Client.new(api_key:    ENV[coinbase_api_key],
