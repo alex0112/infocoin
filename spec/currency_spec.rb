@@ -1,7 +1,13 @@
 require 'rspec'
 require_relative '../lib/currency.rb'
 
+
+
 describe Currency do
+  before (:all) do
+    @currency = Currency.new(:BTC)
+  end
+
   describe '.initialize' do
     it 'raises an ArgumentError when a new currency is instantiated without a symbol' do
       expect { Currency.new() }.to raise_error ArgumentError
@@ -11,25 +17,59 @@ describe Currency do
     end
   end
 
-  describe '.crypto_amount_in_wallet' do
-  end
+  describe '.symbol' do
+    it 'returns a symbol' do
+      expect(@currency.symbol).to be_a Symbol
+    end
 
-  describe '.usd_invested' do
-  end
-
-  describe '#usd_lost' do
-  end
-
-  describe '#usd_gained' do
-  end
-
-  describe '#crypto_current_price_usd' do
-  end
-
-  describe '#my_account_amount_usd' do
+    it 'is one of :BTC, :LTC, :BCH, :ETH' do
+      expect([:BTC, :LTC, :BCH, :ETH].include?(@currency.symbol)).to be true
+    end
   end
   
-  describe '#positive_roi?' do
+  xdescribe '.api_client' do
+    it 'properly instantiates a coinbase client' do
+      expect(@currency.client).to be_a Coinbase::Wallet::Client
+    end
+  end
+  
+  xdescribe '.account' do
+    it 'doesn\'t raise a SocketError' do
+      expect { @currency.account }.not_to raise_error SocketError
+    end
+
+    it 'returns a hash' do
+      expect(@currency.account).to be_a Hash
+    end
+
+    it '' do
+      
+    end
+  end
+  
+  
+  xdescribe '.crypto_amount_in_wallet' do
+    it '' do
+      
+    end
+  end
+
+  xdescribe '.usd_invested' do
+  end
+
+  xdescribe '#usd_lost' do
+  end
+
+  xdescribe '#usd_gained' do
+  end
+
+  xdescribe '#crypto_current_price_usd' do
+  end
+
+  xdescribe '#my_account_amount_usd' do
+  end
+  
+  xdescribe '#positive_roi?' do
 
     context 'given a negative number' do
       it 'returns false' do
@@ -43,7 +83,7 @@ describe Currency do
     
   end
 
-  describe '#calc_roi' do
+  xdescribe '#calc_roi' do
   end
 end
 
