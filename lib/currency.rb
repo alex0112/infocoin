@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require 'coinbase/wallet'
-require 'figaro'
 
 class Currency
   def initialize(symbol)
