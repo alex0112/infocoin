@@ -4,9 +4,8 @@ require 'coinbase/wallet'
 class Currency
   def initialize(symbol)
     raise ArgumentError 'Must specify currency symbol (BTC BCH LTC ETH)' if symbol.nil? || !([:BTC, :LTC, :BCH, :LTC].include?(symbol))
-    #    attr_reader: :symbol
 
-    # @symbol                   = symbol
+    @symbol                   = symbol
     # @api_client               = Coinbase::Wallet::Client.new(api_key:    ENV[coinbase_api_key],
     #                                                         api_secret: ENV[coinbase_api_secret],
     #                                                         CB_VERSION: '2018-02-08')
@@ -19,6 +18,10 @@ class Currency
     # @my_account_amound_usd    = ''
   end
 
+  def symbol
+    return @symbol
+  end
+  
   def crypto_amount_in_wallet
     # self.api_client.refresh!
     # return @account.balance
