@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 
-require 'figaro'
+require 'dotenv/load'
 require 'coinbase/wallet'
 
 ## TODO: make a new API key that doesn't have universal perms
-API_KEY    = Figaro.env['coinbase_api_key']
-API_secret = ENV['coinbase_api_secret']
-p API_secret, API_KEY
+API_KEY    = ENV['COINBASE_KEY']
+API_secret = ENV['COINBASE_SECRET']
+
 
 client = Coinbase::Wallet::Client.new(api_key:    API_KEY,
                                       api_secret: API_secret,
@@ -15,9 +15,8 @@ client = Coinbase::Wallet::Client.new(api_key:    API_KEY,
 account         = client.primary_account
 balance         = account.balance
 payment_methods = client.payment_methods
-#socket          = Coinbase::Exchange::Websocket.new(keepalive: true)
 
-puts account.transactions.to_json
+#socket          = Coinbase::Exchange::Websocket.new(keepalive: true)
 
 
 #client = Coinbase::Wallet::Client.new(api_key:    API_KEY,

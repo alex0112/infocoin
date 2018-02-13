@@ -4,8 +4,10 @@ require_relative '../lib/currency.rb'
 describe Currency do
   describe '.initialize' do
     it 'raises an ArgumentError when a new currency is instantiated without a symbol' do
+      expect { Currency.new() }.to raise_error ArgumentError
     end
     it 'returns a new object of type "Currency"' do
+      expect(Currency.new(:BTC)).to be_a_kind_of Currency
     end
   end
 
