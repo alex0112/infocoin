@@ -12,10 +12,19 @@ client = Coinbase::Wallet::Client.new(api_key:    API_KEY,
                                       api_secret: API_secret,
                                       CB_VERSION: 'YYYY-MM-DD')
 
+
+puts client
+puts client.is_a? Coinbase::Wallet::Client
 account         = client.primary_account
 balance         = account.balance
 payment_methods = client.payment_methods
 
+
+
+# 1000.times do
+#   puts account.refresh!
+#   puts "\n\n"
+# end
 #socket          = Coinbase::Exchange::Websocket.new(keepalive: true)
 
 
