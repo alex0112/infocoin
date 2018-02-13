@@ -3,6 +3,10 @@ require_relative '../lib/currency.rb'
 
 describe Currency do
   describe '.initialize' do
+    it 'raises an ArgumentError when a new currency is instantiated without a symbol' do
+    end
+    it 'returns a new object of type "Currency"' do
+    end
   end
 
   describe '.crypto_amount_in_wallet' do
