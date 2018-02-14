@@ -1,8 +1,6 @@
 require 'rspec'
 require_relative '../lib/currency.rb'
 
-
-
 describe Currency do
   before (:all) do
     @currency = Currency.new(:BTC)
@@ -27,16 +25,18 @@ describe Currency do
     end
   end
   
-  xdescribe '.api_client' do
+  describe '.api_client' do
     it 'properly instantiates a coinbase client' do
-      expect(@currency.client).to be_a Coinbase::Wallet::Client
+      expect(@currency.api_client).to be_a Coinbase::Wallet::Client
     end
+
+    it 'doesn\'t raise an error' do
+      expect { @currency.api_client }.not_to raise_error
+    end
+
   end
   
   xdescribe '.account' do
-    it 'doesn\'t raise a SocketError' do
-      expect { @currency.account }.not_to raise_error SocketError
-    end
 
     it 'returns a hash' do
       expect(@currency.account).to be_a Hash
