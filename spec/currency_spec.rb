@@ -1,17 +1,28 @@
 require 'rspec'
+require 'dotenv/load'
+
 require_relative '../lib/currency.rb'
+
 
 describe Currency do
   before (:all) do
-    @currency = Currency.new(:BTC)
+    @api_client = Coinbase::Wallet::Client.new(api_key:    ENV['COINBASE_KEY'],
+                                               api_secret: ENV['COINBASE_SECRET'],
+                                               CB_VERSION: 'YYYY-MM-DD')
+    @currency   = Currency.new(symbol: :BTC, api_client: @api_client)
   end
 
   describe '.initialize' do
     it 'raises an ArgumentError when a new currency is instantiated without a symbol' do
-      expect { Currency.new() }.to raise_error ArgumentError
+      expect { Currency.new(api_client: @api_client) }.to raise_error ArgumentError
     end
+
+    it 'raises an ArgumentError if no coinbase client object is passed' do
+      expect { Currency.new(symbol: :BTC) }.to raise_error ArgumentError
+    end
+    
     it 'returns a new object of type "Currency"' do
-      expect(Currency.new(:BTC)).to be_a_kind_of Currency
+      expect(Currency.new(symbol: :BTC, api_client: @api_client)).to be_a_kind_of Currency
     end
   end
 
@@ -37,20 +48,21 @@ describe Currency do
   end
   
   xdescribe '.account' do
-
     it 'returns a hash' do
       expect(@currency.account).to be_a Hash
     end
 
-    it '' do
-      
+    it 'has 11 keys' do
+      expect(@currency.account.keys.count).to eql(11)
+    end
+
+    it 'matches the symbol' do
+      expect(@currency.symbol.to_s).to eql(@currency.account.currency)
     end
   end
   
-  
-  xdescribe '.crypto_amount_in_wallet' do
+  describe '.crypto_amount_in_wallet' do
     it '' do
-      
     end
   end
 
