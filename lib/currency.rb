@@ -31,8 +31,7 @@ class Currency
   end
   
   def crypto_amount_in_wallet
-    # self.api_client.refresh!
-    # return @account.balance
+    Float(self.account['balance']['amount'])
   end
 
   def usd_invested

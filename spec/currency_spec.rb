@@ -60,8 +60,9 @@ describe Currency do
     end
   end
   
-  xdescribe '.crypto_amount_in_wallet' do
-    it '' do
+  describe '.crypto_amount_in_wallet' do
+    it 'is a float' do
+      expect(@currency.crypto_amount_in_wallet).to be_a Float
     end
   end
 
