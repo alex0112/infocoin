@@ -44,24 +44,26 @@ describe Currency do
     it 'doesn\'t raise an error' do
       expect { @currency.api_client }.not_to raise_error
     end
-
   end
   
-  xdescribe '.account' do
+  describe '.account' do
     it 'returns a hash' do
+      puts @currency.account
       expect(@currency.account).to be_a Hash
     end
 
     it 'has 11 keys' do
+      puts @currency.account.keys.count
       expect(@currency.account.keys.count).to eql(11)
     end
 
     it 'matches the symbol' do
-      expect(@currency.symbol.to_s).to eql(@currency.account.currency)
+      puts @currency.symbol.to_s
+      expect(@currency.symbol.to_s).to eq(@currency.account['currency'])
     end
   end
   
-  describe '.crypto_amount_in_wallet' do
+  xdescribe '.crypto_amount_in_wallet' do
     it '' do
     end
   end

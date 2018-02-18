@@ -27,8 +27,7 @@ class Currency
   end
 
   def account
-    self.api_client.refresh!
-    return @api_client.account(self.symbol)
+    return self.api_client.account(self.symbol).refresh!
   end
   
   def crypto_amount_in_wallet
