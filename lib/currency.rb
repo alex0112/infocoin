@@ -10,7 +10,7 @@ class Currency
     @symbol                   = symbol
     @api_client               = api_client
     @account                  = @api_client.account(symbol)
-    # @crypto_amount_in_wallet  = @account.balance
+    @crypto_amount_in_wallet  = @account['balance']['amount']
     # @usd_invested             = ''
     # @usd_lost                 = ''
     # @usd_gained               = ''
