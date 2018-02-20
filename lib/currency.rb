@@ -11,7 +11,7 @@ class Currency
     @api_client               = api_client
     @account                  = @api_client.account(symbol)
     @crypto_amount_in_wallet  = @account['balance']['amount']
-    # @usd_invested             = ''
+    @usd_invested             = @account['native_balance']['amount']
     # @usd_lost                 = ''
     # @usd_gained               = ''
     # @crypto_current_usd_price = ''
@@ -33,11 +33,15 @@ class Currency
   end
   
   def crypto_amount_in_wallet
-    Float(self.account['balance']['amount'])
+    return Float(self.account['balance']['amount'])
   end
 
   def usd_invested
-#    return @usd_invested
+    transactions   = self.account.transactions
+    total_invested = transactions
+                       .map { |t| t['native_amount']['amount'].to_f }
+                       .reduce(:+)
+    return total_invested
   end
 
   def usd_gained

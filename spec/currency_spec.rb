@@ -1,6 +1,5 @@
 require 'rspec'
 require 'dotenv/load'
-
 require_relative '../lib/currency.rb'
 
 
@@ -59,14 +58,17 @@ describe Currency do
       expect(@currency.symbol.to_s).to eq(@currency.account['currency'])
     end
   end
-  
+
   describe '.crypto_amount_in_wallet' do
     it 'is a float' do
       expect(@currency.crypto_amount_in_wallet).to be_a Float
     end
   end
 
-  xdescribe '.usd_invested' do
+  describe '.usd_invested' do
+    it 'is a float' do
+      expect(@currency.usd_invested).to be_a Float
+    end
   end
 
   xdescribe '#usd_lost' do
