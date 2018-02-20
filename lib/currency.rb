@@ -44,6 +44,10 @@ class Currency
     return total_invested
   end
 
+  def current_price
+    Float(self.account['native_balance']['amount'])
+  end
+  
   def usd_gained
 #    return @usd_gained
   end

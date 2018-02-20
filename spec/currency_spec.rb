@@ -71,6 +71,13 @@ describe Currency do
     end
   end
 
+  describe '.current_price' do
+    it 'is a float' do
+      expect(@currency.current_price).to be_a Float
+    end
+  end
+
+  
   xdescribe '#usd_lost' do
   end
 
