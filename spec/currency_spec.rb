@@ -1,7 +1,5 @@
 require 'rspec'
-require 'dotenv/load'
 require_relative '../lib/currency.rb'
-
 
 describe Currency do
   before (:all) do
