@@ -17,6 +17,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
+    vcr (4.0.0)
 
 PLATFORMS
   ruby
@@ -25,6 +26,7 @@ DEPENDENCIES
   coinbase
   dotenv (~> 2.2)
   rspec (~> 3.7)
+  vcr (~> 4.0)
 
 BUNDLED WITH
    1.16.0

@@ -14,3 +14,6 @@ gem "rspec", "~> 3.7"
 
 # Added at 2018-02-12 21:02:40 -0700 by alex:
 gem "dotenv", "~> 2.2"
+
+# Added at 2018-03-22 16:29:02 -0600 by alex:
+gem "vcr", "~> 4.0"
