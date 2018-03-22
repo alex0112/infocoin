@@ -90,9 +90,23 @@ describe Currency do
     end
   end
 
-  
-  xdescribe '#usd_lost' do
-  end
+  describe '.usd_lost' do
+    context 'given no loss' do
+      it 'should return 0.0' do
+        VCR.use_cassette('usd_no_loss') do
+          expect(@currency.usd_lost).to eql(0.0)
+        end
+      end
+    end
+    
+    context 'given a loss' do
+      it 'should return 9.00 as a loss' do
+        VCR.use_cassette('usd_loss') do
+          expect(@currency.usd_lost).to eql(10.0 - 1.0)
+        end
+      end
+    end
+  end  
 
   xdescribe '.usd_gained' do
   end
