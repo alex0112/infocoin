@@ -12,11 +12,6 @@ class Currency
     @account                  = @api_client.account(symbol)
     @crypto_amount_in_wallet  = @account['balance']['amount']
     @usd_invested             = @account['native_balance']['amount']
-    @current_price            = ''
-    # @usd_lost                 = ''
-    # @usd_gained               = ''
-    # @crypto_current_usd_price = ''
-    # @my_account_amound_usd    = ''
   end
 
   def symbol
@@ -39,8 +34,7 @@ class Currency
 
   def usd_invested
     transactions   = self.account.transactions
-
-   total_invested = transactions
+    total_invested = transactions
                        .map { |t| t['native_amount']['amount'].to_f }
                        .reduce(:+)
     return Float(total_invested)
