@@ -127,26 +127,4 @@ describe Currency do
     end
   end
   
-  xdescribe '.crypto_current_price_usd' do
-  end
-
-  xdescribe '.my_account_amount_usd' do
-  end
-
-  xdescribe '.positive_roi?' do
-
-    context 'given a negative number' do
-      it 'returns false' do
-      end
-    end
-
-    context 'given a positive number' do
-      it 'returns true do' do
-      end
-    end
-
-  end
-
-  xdescribe '.calc_roi' do
-  end
 end

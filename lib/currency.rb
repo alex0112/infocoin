@@ -67,25 +67,4 @@ class Currency
       return gain
     end
   end
-
-  def crypto_current_usd_price
-#    return @crypto_current_usd_price
-  end
-
-  def my_account_amount_usd
-#    return @my_account_amound_usd
-  end
-  
-
-  def positive_roi?
-    # roi = calc_roi()
-    # roi.positive? ? return true : return false
-  end
-  
-  def calc_roi
-    #self.usd_invested - current_exchange_rate(self.symbol)
-  end
-
-  def current_exchange_rate
-  end
 end
