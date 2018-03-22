@@ -60,7 +60,12 @@ class Currency
   end
   
   def usd_gained
-#    return @usd_gained
+    gain = self.current_cash_in_value - self.usd_invested
+    if gain.negative? # i.e. $1.00 - $100.00 = -$99.00 means that $99.00 have been lost as profit, so return a $0.00 as a gain.
+      return 0.0
+    else
+      return gain
+    end
   end
 
   def crypto_current_usd_price

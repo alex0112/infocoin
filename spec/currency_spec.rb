@@ -108,9 +108,25 @@ describe Currency do
     end
   end  
 
-  xdescribe '.usd_gained' do
-  end
+  describe '.usd_gained' do
+    context 'with no gain' do
+      it 'returns 0.0 as a gain' do
+        VCR.use_cassette('usd_no_gain') do
+          expect(@currency.usd_gained).to eql(0.0)
+        end
+      end
+    end
 
+      
+    context 'with a gain' do
+      it 'returns 10.0 as a gain' do
+        VCR.use_cassette('usd_gain') do
+          expect(@currency.usd_gained).to eql(10.0)
+        end
+      end
+    end
+  end
+  
   xdescribe '.crypto_current_price_usd' do
   end
 
