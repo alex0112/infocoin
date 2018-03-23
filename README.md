@@ -1,4 +1,4 @@
-# bitcoin_bot
+# Coinbase currency gains and losses
 
 
 # Usage:
@@ -16,3 +16,5 @@ puts "Bitcoin losses: $#{btc.usd_lost}"
 puts "Bitcoin gains: $#{btc.usd_gained}"
     
 ```
+
+This might be a gem someday.
