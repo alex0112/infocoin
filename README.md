@@ -1,10 +1,6 @@
 # Infocoin
 
-# Coinbase currency gains and losses
-
-
-
-
+Simple gem to abstract crytptocurrencies and return gains/losses.
 
 ## Installation
 
