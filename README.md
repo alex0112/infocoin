@@ -1,8 +1,10 @@
 # Infocoin
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/infocoin`. To experiment with that code, run `bin/console` for an interactive prompt.
+# Coinbase currency gains and losses
 
-TODO: Delete this and the text above, and describe your gem
+
+
+
 
 ## Installation
 
@@ -22,7 +24,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+#!/usr/bin/env ruby
+require_relative './lib/currency.rb'
+require 'coinbase/wallet'
+
+api_client = Coinbase::Wallet::Client.new(api_key: ENV['COINBASE_KEY'],
+                                      api_secret:  ENV['COINBASE_SECRET'])
+btc    = Currency.new(symbol: :BTC, api_client: api_client)
+
+puts "Bitcoin losses: $#{btc.usd_lost}"
+puts "Bitcoin gains: $#{btc.usd_gained}"
+    
+```
 
 ## Development
 
