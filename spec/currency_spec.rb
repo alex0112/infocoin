@@ -1,11 +1,9 @@
-require 'spec_helper'
-
-RSpec.describe Infocoin::Currency do
+describe Infocoin::Currency do
   before (:all) do
     VCR.use_cassette('client_and_currency') do
       @api_client = Coinbase::Wallet::Client.new(api_key:    ENV['COINBASE_KEY'],
                                                  api_secret: ENV['COINBASE_SECRET'])
-      @currency   =Infocoin::Currency.new(symbol: :BTC, api_client: @api_client)
+      @currency   = Infocoin::Currency.new(symbol: :BTC, api_client: @api_client)
     end
   end
 
@@ -15,7 +13,7 @@ RSpec.describe Infocoin::Currency do
     end
 
     it 'raises an ArgumentError if no coinbase client object is passed' do
-      expect {Infocoin::Currency.new(symbol: :BTC) }.to raise_error ArgumentError
+      expect { Infocoin::Currency.new(symbol: :BTC) }.to raise_error ArgumentError
     end
 
     it 'returns a new object of type "Infocoin::Currency"' do
@@ -115,7 +113,6 @@ RSpec.describe Infocoin::Currency do
         end
       end
     end
-
     
     context 'with a gain' do
       it 'returns 10.0 as a gain' do
