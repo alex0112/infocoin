@@ -22,15 +22,12 @@ Or install it yourself as:
 
 ```ruby
 #!/usr/bin/env ruby
-require_relative './lib/currency.rb'
-require 'coinbase/wallet'
+require 'infocoin'
 
-api_client = Coinbase::Wallet::Client.new(api_key: ENV['COINBASE_KEY'],
-                                      api_secret:  ENV['COINBASE_SECRET'])
-btc    = Currency.new(symbol: :BTC, api_client: api_client)
+btc = Currency.new(symbol: :BTC)
 
-puts "Bitcoin losses: $#{btc.usd_lost}"
-puts "Bitcoin gains: $#{btc.usd_gained}"
+p "Bitcoin losses: $#{btc.usd_lost}"
+p "Bitcoin gains: $#{btc.usd_gained}"
     
 ```
 
