@@ -34,8 +34,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "vcr"
   
-  spec.add_dependency "coinbase", "~> 4.1"
-  spec.add_dependency "dotenv", "~> 2.2"
+  spec.add_runtime_dependency "coinbase", "~> 4.1"
+  spec.add_runtime_dependency "dotenv", "~> 2.2"
 
   
 end
