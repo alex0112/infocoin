@@ -1,6 +1,6 @@
 # Infocoin
 
-Simple gem to abstract crytptocurrencies and return gains/losses.
+Calculate cryptocurrency gains and losses.
 
 ## Usage
 
