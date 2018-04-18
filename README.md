@@ -2,6 +2,18 @@
 
 Simple gem to abstract crytptocurrencies and return gains/losses.
 
+## Usage
+
+```ruby
+#!/usr/bin/env ruby
+require 'infocoin'
+
+btc = Currency.new(symbol: :BTC)
+
+p "Bitcoin losses: $#{btc.usd_lost}"
+p "Bitcoin gains: $#{btc.usd_gained}"
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -17,19 +29,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install infocoin
-
-## Usage
-
-```ruby
-#!/usr/bin/env ruby
-require 'infocoin'
-
-btc = Currency.new(symbol: :BTC)
-
-p "Bitcoin losses: $#{btc.usd_lost}"
-p "Bitcoin gains: $#{btc.usd_gained}"
-    
-```
 
 ## Development
 
