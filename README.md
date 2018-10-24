@@ -1,4 +1,4 @@
-# Infocoin
+# Infocoin (on hold for now)
 
 Calculate cryptocurrency gains and losses.
 
