@@ -41,7 +41,12 @@ module Infocoin
     end
 
     def current_cash_in_value
-      Float(self.account['native_balance']['amount']) ## TODO: Use the buy/quote endpoint instead
+      sell = self.api_client.sell(self.account['id'],
+                                  {:amount => self.account['native_balance']['amount'],
+                                   :currency => "USD",
+                                   :quote => "true",
+                                  })
+      Float(sell['total']['amount'])
     end
 
     def usd_lost
