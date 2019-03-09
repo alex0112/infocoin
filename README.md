@@ -1,6 +1,6 @@
 # Infocoin (on hold for now)
 
-Calculate cryptocurrency gains and losses.  Intended for use by a trading bot that buys and sells coins to turn a profit.
+An easy way to view your ROI in Coinbase
 
 ## Usage
 
