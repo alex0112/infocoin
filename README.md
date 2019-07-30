@@ -1,4 +1,7 @@
-# Infocoin (on hold for now)
+# Infocoin
+
+> _On hold for now_
+> This project is being ported to the elixir library [Aurum](https://github.com/alex0112/aurum)
 
 An easy way to view your ROI in Coinbase
 
